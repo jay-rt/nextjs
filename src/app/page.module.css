@@ -24,16 +24,6 @@
   font-weight: 300;
 }
 
-.btn {
-  width: max-content;
-  border: none;
-  padding: 20px;
-  cursor: pointer;
-  background-color: #53c29b;
-  color: #fff;
-  border-radius: 5px;
-}
-
 .img {
   width: 100%;
   height: 500px;

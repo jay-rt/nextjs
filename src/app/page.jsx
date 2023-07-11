@@ -1,6 +1,7 @@
 import Hero from "public/hero.png";
 import styles from "./page.module.css";
 import Image from "next/image";
+import Button from "@/components/button/Button";
 
 const Home = () => {
   return (
@@ -13,10 +14,10 @@ const Home = () => {
           Turning your Idea into Reality. We bring together the teams from the
           global tech industry.
         </p>
-        <button className={styles.btn}>See Our Works</button>
+        <Button url="/portfolio" title="See Our Works" />
       </div>
       <div className={styles.item}>
-        <Image src={Hero} alt="" className={styles.img} />
+        <Image src={Hero} alt="" className={styles.img} priority={true} />
       </div>
     </div>
   );
