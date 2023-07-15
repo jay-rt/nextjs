@@ -1,0 +1,25 @@
+.container {
+  width: 42px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+  border: 1.5px solid #53c28b70;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.icon {
+  font-size: 12px;
+}
+
+.circle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #53c28b;
+  left: 2px;
+}

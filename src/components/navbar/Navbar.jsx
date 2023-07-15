@@ -1,4 +1,5 @@
 "use client";
+import ThemeButton from "../themeButton/ThemeButton";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 
@@ -42,6 +43,7 @@ const Navbar = () => {
         JayRt
       </Link>
       <div className={styles.links}>
+        <ThemeButton />
         {links.map((link) => (
           <Link key={link.id} href={link.url} className={styles.link}>
             {link.title}
