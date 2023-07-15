@@ -22,6 +22,14 @@
   gap: 20px;
 }
 
+.title {
+  font-size: 50px;
+}
+
+.desc {
+  font-size: 20px;
+}
+
 .img__contianer {
   flex: 1;
   position: relative;
