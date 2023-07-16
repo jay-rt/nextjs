@@ -21,5 +21,10 @@
   height: 15px;
   border-radius: 50%;
   background-color: #53c28b;
-  left: 2px;
+  right: 2px;
+  transition: transform 0.3s linear;
+}
+
+.circle.dark {
+  transform: translateX(-21px);
 }
