@@ -20,15 +20,15 @@
   background-size: cover !important;
 }
 
-.item:nth-child(1) {
+.link:nth-child(1) .item {
   background: url("/illustration.png");
 }
 
-.item:nth-child(2) {
+.link:nth-child(2) .item {
   background: url("/websites.jpg");
 }
 
-.item:nth-child(3) {
+.link:nth-child(3) .item {
   background: url("/apps.jpg");
 }
 

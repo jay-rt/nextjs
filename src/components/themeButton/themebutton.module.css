@@ -26,5 +26,5 @@
 }
 
 .circle.dark {
-  transform: translateX(-21px);
+  transform: translateX(-21px); /* 21 is half of the main div length*/
 }

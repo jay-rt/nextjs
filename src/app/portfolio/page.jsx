@@ -6,21 +6,21 @@ const Portfolio = () => {
     <div className={styles.container}>
       <h1 className={styles.select__title}>Choose a gallery</h1>
       <div className={styles.items}>
-        <div className={styles.item}>
-          <Link href="/portfolio/illustrations">
+        <Link href="/portfolio/illustrations" className={styles.link}>
+          <div className={styles.item}>
             <span className={styles.title}>Illustrations</span>
-          </Link>
-        </div>
-        <div className={styles.item}>
-          <Link href="/portfolio/websites">
+          </div>
+        </Link>
+        <Link href="/portfolio/websites" className={styles.link}>
+          <div className={styles.item}>
             <span className={styles.title}>Websites</span>
-          </Link>
-        </div>
-        <div className={styles.item}>
-          <Link href="/portfolio/application">
+          </div>
+        </Link>
+        <Link href="/portfolio/application" className={styles.link}>
+          <div className={styles.item}>
             <span className={styles.title}>Application</span>
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </div>
   );
