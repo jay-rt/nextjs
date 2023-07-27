@@ -3,15 +3,21 @@ import styles from "./page.module.css";
 import { notFound } from "next/navigation";
 
 const getData = async (id) => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
   if (!res.ok) {
     return notFound();
   }
 
   return res.json();
 };
+
+export async function generateMetadata({ params }) {
+  const data = await getData(params.id);
+  return {
+    title: data.title,
+    description: data.desc,
+  };
+}
 
 const BlogPost = async ({ params }) => {
   const data = await getData(params.id);
