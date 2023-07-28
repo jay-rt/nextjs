@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import styles from "./page.module.css";
-import { useState } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -14,6 +14,10 @@ const Login = () => {
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    status === "authenticated" && router.push("/dashboard");
+  }, [router, status]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,7 +33,7 @@ const Login = () => {
   };
 
   if (status === "loading") return <p>Loading...</p>;
-  if (status === "authenticated") return router?.push("/dashboard");
+  if (status === "authenticated") return <p>Redirecting...</p>;
 
   return (
     <div className={styles.container}>

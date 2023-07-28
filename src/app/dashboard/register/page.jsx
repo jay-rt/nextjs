@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 const Register = () => {
   const [input, setInput] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -36,13 +36,13 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, password } = input;
+    const { username, email, password } = input;
     try {
       const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name,
+          username,
           email,
           password,
         }),
@@ -75,9 +75,9 @@ const Register = () => {
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="text"
-          name="name"
-          value={input.name}
-          placeholder="Name"
+          name="username"
+          value={input.username}
+          placeholder="Username"
           className={styles.input}
           required
           onChange={handleChange}

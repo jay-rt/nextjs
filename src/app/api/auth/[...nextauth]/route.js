@@ -39,6 +39,13 @@ const handler = NextAuth({
       },
     }),
   ],
+  callbacks: {
+    async session({ session }) {
+      const user = await User.findOne({ email: session.user.email });
+      (session.user.username = user.username), (session.user.id = user._id);
+      return session;
+    },
+  },
   pages: {
     error: "/dashboard/login",
   },
