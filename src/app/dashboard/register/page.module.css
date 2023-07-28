@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.input {
+  padding: 20px;
+  background: transparent;
+  border: 1px solid #bbb;
+  color: #bbb;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn {
+  width: 300px;
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #53c29b;
+  color: #fff;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: #53c28b;
+}
+
+.error {
+  position: absolute;
+  color: red;
+  font-size: 12px;
+  bottom: 60px;
+}
