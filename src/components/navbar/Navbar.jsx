@@ -1,4 +1,5 @@
 "use client";
+import { signOut } from "next-auth/react";
 import ThemeButton from "../themeButton/ThemeButton";
 import styles from "./navbar.module.css";
 import Link from "next/link";
@@ -49,11 +50,7 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        <button
-          onClick={() => console.log("logout")}
-          className={styles.btn}
-          type="submit"
-        >
+        <button onClick={signOut} className={styles.btn} type="submit">
           Logout
         </button>
       </div>
