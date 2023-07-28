@@ -3,9 +3,13 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const { status } = useSession();
+  const router = useRouter();
+
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -23,6 +27,9 @@ const Login = () => {
     e.preventDefault();
     signIn("credentials", input);
   };
+
+  if (status === "loading") return <p>Loading...</p>;
+  if (status === "authenticated") return router?.push("/dashboard");
 
   return (
     <div className={styles.container}>
@@ -56,7 +63,10 @@ const Login = () => {
       >
         Signin using Google
       </button>
-      <Link href="/dashboard/register">Register</Link>
+      <span className={styles.or}>- OR -</span>
+      <Link className={styles.link} href="/dashboard/register">
+        Create new account
+      </Link>
     </div>
   );
 };

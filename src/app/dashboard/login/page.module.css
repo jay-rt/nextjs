@@ -33,10 +33,26 @@
   border-radius: 5px;
 }
 .btn:hover {
-  background-color: #53c28b;
+  background-color: #49b07d;
 }
 
 .google {
-  background-color: #fff;
-  color: #111;
+  background-color: rgba(228, 97, 50, 0.72);
+}
+
+.google:hover {
+  background-color: rgba(228, 97, 50, 0.803);
+}
+
+.or {
+  color: #bbb;
+}
+
+.link {
+  text-decoration: underline;
+  color: #7d7c7c;
+}
+
+.link:hover {
+  color: rgb(61, 61, 61);
 }

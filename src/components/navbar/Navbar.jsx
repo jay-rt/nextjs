@@ -1,8 +1,9 @@
 "use client";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import ThemeButton from "../themeButton/ThemeButton";
 import styles from "./navbar.module.css";
 import Link from "next/link";
+import Button from "../button/Button";
 
 const links = [
   {
@@ -38,6 +39,7 @@ const links = [
 ];
 
 const Navbar = () => {
+  const { status } = useSession();
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
@@ -50,9 +52,11 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        <button onClick={signOut} className={styles.btn} type="submit">
-          Logout
-        </button>
+        {status === "authenticated" && (
+          <button onClick={signOut} className={styles.btn} type="submit">
+            Logout
+          </button>
+        )}
       </div>
     </div>
   );
