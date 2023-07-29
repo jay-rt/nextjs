@@ -28,6 +28,9 @@ const Contact = () => {
             rows="10"
             className={styles.textarea}
           />
+          <button type="submit" className="btn">
+            Connect
+          </button>
         </form>
       </div>
     </div>

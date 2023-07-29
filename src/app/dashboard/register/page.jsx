@@ -110,7 +110,7 @@ const Register = () => {
           onChange={handleChange}
         />
         {error.isError && <span className={styles.error}>{error.message}</span>}
-        <button type="submit" className={styles.btn} disabled={error.isError}>
+        <button type="submit" className="btn" disabled={error.isError}>
           Register
         </button>
       </form>

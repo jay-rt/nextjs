@@ -35,3 +35,16 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.btn {
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #53c29b;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #49b07d;
+}

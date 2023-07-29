@@ -4,7 +4,7 @@ import styles from "./button.module.css";
 const Button = ({ url, title }) => {
   return (
     <Link href={url}>
-      <button className={styles.btn}>{title}</button>
+      <button className={`btn ${styles.btn}`}>{title}</button>
     </Link>
   );
 };

@@ -56,13 +56,13 @@ const Login = () => {
           required
           onChange={handleChange}
         />
-        <button type="submit" className={styles.btn}>
+        <button type="submit" className={`btn ${styles.btn}`}>
           Login
         </button>
       </form>
       <button
         type="button"
-        className={`${styles.btn} ${styles.google}`}
+        className={`btn ${styles.btn} ${styles.google}`}
         onClick={() => signIn("google")}
       >
         Signin using Google

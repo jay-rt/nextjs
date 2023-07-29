@@ -1,5 +1,5 @@
-import Hero from "public/hero.png";
 import styles from "./page.module.css";
+import Hero from "public/hero.png";
 import Image from "next/image";
 import Button from "@/components/button/Button";
 
