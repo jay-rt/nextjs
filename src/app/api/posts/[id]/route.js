@@ -11,3 +11,13 @@ export const GET = async (req, { params }) => {
     return new Response("Database Error", { status: 500 });
   }
 };
+
+export const DELETE = async (req, { params }) => {
+  try {
+    await connectDB();
+    await Post.findByIdAndDelete(params.id);
+    return new Response("Successfully deleted the post", { status: 200 });
+  } catch (err) {
+    return new Response("Database Error", { status: 500 });
+  }
+};
