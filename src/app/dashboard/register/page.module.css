@@ -28,10 +28,8 @@
 }
 
 .error {
-  position: absolute;
   color: red;
-  font-size: 12px;
-  bottom: 60px;
+  align-self: center;
 }
 
 .or {

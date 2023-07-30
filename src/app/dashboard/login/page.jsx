@@ -4,16 +4,23 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const Login = () => {
   const { status } = useSession();
   const router = useRouter();
-
+  const params = useSearchParams();
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
   const [input, setInput] = useState({
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    setSuccess(params.get("success"));
+    setError(params.get("error"));
+  }, [params]);
 
   useEffect(() => {
     status === "authenticated" && router.push("/dashboard");
@@ -37,6 +44,8 @@ const Login = () => {
 
   return (
     <div className={styles.container}>
+      <h1 className={styles.title}>{success ? success : "Welcome Back"}</h1>
+      <h2 className={styles.subtitle}>Please sign in to see the dashboard.</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="email"
@@ -67,6 +76,7 @@ const Login = () => {
       >
         Signin using Google
       </button>
+      {error && <span className={styles.error}>{error}</span>}
       <span className={styles.or}>- OR -</span>
       <Link className={styles.link} href="/dashboard/register">
         Create new account

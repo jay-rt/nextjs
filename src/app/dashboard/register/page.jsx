@@ -55,18 +55,10 @@ const Register = () => {
         });
       }
 
-      res.status === 201 && router.push("/dashboard/login");
+      res.status === 201 &&
+        router.push("/dashboard/login?success=Account has been created");
     } catch (err) {
       console.log(err);
-    } finally {
-      setTimeout(
-        () =>
-          setError({
-            isError: false,
-            message: "",
-          }),
-        2000
-      );
     }
   };
 
@@ -109,10 +101,10 @@ const Register = () => {
           required
           onChange={handleChange}
         />
-        {error.isError && <span className={styles.error}>{error.message}</span>}
         <button type="submit" className="btn" disabled={error.isError}>
           Register
         </button>
+        {error.isError && <span className={styles.error}>{error.message}</span>}
       </form>
       <span className={styles.or}>- OR -</span>
       <Link className={styles.link} href="/dashboard/login">

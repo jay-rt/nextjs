@@ -6,6 +6,16 @@
   gap: 20px;
 }
 
+.title {
+  color: #bbb;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #bbb;
+}
+
 .form {
   width: 300px;
   display: flex;
@@ -25,6 +35,11 @@
 
 .btn {
   width: 300px;
+}
+
+.error {
+  color: red;
+  align-self: center;
 }
 
 .google {
