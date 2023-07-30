@@ -49,6 +49,7 @@ const Dashboard = () => {
 
       if (!res.ok) await setError(res);
       mutate();
+      e.target.reset();
     } catch (err) {
       console.log(err.message);
     }
