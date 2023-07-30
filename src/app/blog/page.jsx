@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-const getData = async () => {
+const getPosts = async () => {
   const res = await fetch("http://localhost:3000/api/posts", {
     cache: "no-store",
   });
@@ -20,18 +20,18 @@ export const metadata = {
 };
 
 const Blog = async () => {
-  const data = await getData();
+  const posts = await getPosts();
   return (
     <div className={styles.main__container}>
-      {data.map((item) => (
+      {posts.map((post) => (
         <Link
-          href={`/blog/${data.id}`}
+          href={`/blog/${post._id}`}
           className={styles.container}
-          key={item.id}
+          key={post._id}
         >
           <div className={styles.image__container}>
             <Image
-              src="https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src={post.image}
               alt=""
               width={400}
               height={250}
@@ -39,8 +39,8 @@ const Blog = async () => {
             />
           </div>
           <div className={styles.content}>
-            <h1 className={styles.title}>{item.title}</h1>
-            <p className={styles.desc}>Desc</p>
+            <h1 className={styles.title}>{post.title}</h1>
+            <p className={styles.desc}>{post.desc}</p>
           </div>
         </Link>
       ))}
